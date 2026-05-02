@@ -10,8 +10,16 @@
     height: 100vh;
     background: black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  #clock {
+    font-size: 32px;
+    margin-bottom: 20px;
   }
 
   img {
@@ -23,7 +31,26 @@
 
 <body>
 
+<div id="clock">Loading time...</div>
+
 <img src="globe.gif" alt="globe">
+
+<script>
+function updateClock() {
+  const options = {
+    timeZone: "Europe/Stockholm",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  };
+
+  const time = new Date().toLocaleTimeString("en-GB", options);
+  document.getElementById("clock").innerText = "Sweden Time: " + time;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
 
 </body>
 </html>
