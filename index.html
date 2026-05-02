@@ -13,17 +13,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
     font-family: Arial, sans-serif;
   }
 
+  #label {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+  }
+
   #clock {
-    font-size: 48px;
+    font-size: 60px;
+    color: white;
     margin-bottom: 30px;
   }
 
   img {
-    width: 500px;
+    width: 650px; /* ⬅️ bigger globe */
     max-width: 90vw;
     height: auto;
   }
@@ -32,7 +38,8 @@
 
 <body>
 
-<div id="clock">--:--:--</div>
+<div id="label">My time:</div>
+<div id="clock"></div>
 
 <img src="globe.gif" alt="globe">
 
@@ -46,8 +53,8 @@ function updateClock() {
     hour12: false
   };
 
-  const time = new Date().toLocaleTimeString("en-GB", options);
-  document.getElementById("clock").innerText = time;
+  document.getElementById("clock").innerText =
+    new Date().toLocaleTimeString("en-GB", options);
 }
 
 setInterval(updateClock, 1000);
