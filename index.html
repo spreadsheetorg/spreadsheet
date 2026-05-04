@@ -29,9 +29,10 @@
   }
 
   img {
-    width: 650px; /* ⬅️ bigger globe */
+    width: 650px;
     max-width: 90vw;
     height: auto;
+    cursor: pointer; /* shows it's clickable */
   }
 </style>
 </head>
@@ -41,7 +42,9 @@
 <div id="label">My time:</div>
 <div id="clock"></div>
 
-<img src="globe.gif" alt="globe">
+<a href="https://www.google.com/maps/@60.68969,15.0370732,7z" target="_blank">
+  <img src="globe.gif" alt="globe">
+</a>
 
 <script>
 function updateClock() {
